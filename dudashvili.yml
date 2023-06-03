@@ -1,0 +1,37 @@
+version: '3.7'
+
+services:
+  dudashvili_server:
+    image: dudashvili_server:${TAG}
+    logging:
+      driver: "json-file"
+      options:
+        max-file: 3
+        max-size: 1000m
+    working_dir: /app
+    volumes:
+      - ./static:/app/dist/static
+    ports:
+    - "8080:8080"
+    deploy:
+      update_config:
+        parallelism: 1
+        order: start-first
+        failure_action: rollback
+        delay: 10s
+        monitor: 35s
+      rollback_config:
+        parallelism: 0
+        order: stop-first
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+    networks:
+      - default
+    command: npm start
+    environment:
+      DUDASHVILI_URL: ${DUDASHVILI_URL}
+      HTTP_PORT: ${HTTP_PORT}
+      TAG: ${TAG}
