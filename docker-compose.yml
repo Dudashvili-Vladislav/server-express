@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   dudashvili_server:
-    image: dudashvili_server:${TAG}
+    image: ${IMAGE}
     logging:
       driver: "json-file"
       options:
