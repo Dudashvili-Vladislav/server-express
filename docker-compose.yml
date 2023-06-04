@@ -11,8 +11,6 @@ services:
     working_dir: /app
     volumes:
       - ./static:/app/dist/static
-    ports:
-    - "8080:8080"
     deploy:
       update_config:
         parallelism: 1
