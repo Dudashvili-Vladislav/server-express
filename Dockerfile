@@ -1,11 +1,11 @@
 # FROM node:12
 FROM node:12.22.6-alpine3.11
 
-# RUN apk --no-cache --update --virtual build-dependencies add \
-#     python \
-#     make \
-#     g++ \
-#     py3-pip
+RUN apk --no-cache --update --virtual build-dependencies add \
+    python \
+    make \
+    g++ \
+    py3-pip
 
 WORKDIR /app
 
