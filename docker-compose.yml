@@ -30,6 +30,7 @@ services:
       - default
     command: npm start
     environment:
+      CONTEXT_STATIC_PATH: ${CONTEXT_STATIC_PATH}
+      GRAPH_QL_STATIC_PATH: ${GRAPH_QL_STATIC_PATH}
       DUDASHVILI_URL: ${DUDASHVILI_URL}
       HTTP_PORT: ${HTTP_PORT}
-      TAG: ${TAG}
