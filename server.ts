@@ -6,7 +6,7 @@ import contextStatic from './staticRoutes/context';
 dotenv.config();
 
 const app: Express = express();
-const port = process.env.HTTP_PORT;
+const port = process.env.HTTP_PORT || 8080;
 
 app.use('/graphql', graphQlStatic);
 app.use('/context', contextStatic);
