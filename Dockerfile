@@ -16,5 +16,5 @@ COPY . /app/
 
 EXPOSE 8080
 
-RUN npm run build
+RUN npx tsc
 CMD ["npm", "run", "start"]
