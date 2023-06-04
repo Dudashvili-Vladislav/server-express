@@ -1,7 +1,7 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "EBALANANOL'",
+  "description": "Proj",
   "main": "server.ts",
   "scripts": {
     "start": "node dist/server.js",
